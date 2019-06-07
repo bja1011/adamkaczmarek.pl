@@ -5,8 +5,7 @@
 </nb-card>
 
 <div class="projects-list">
-  <ng-container *ngFor="let project of processedProjects">
-    <nb-card class="project" size="small">
+    <nb-card class="project" size="small" *ngFor="let project of processedProjects; trackBy: trackProject" @fadeIn>
       <nb-card-header>{{project.name}}</nb-card-header>
       <nb-card-body>
         <div class="project-image" [style.background-image]="'url('+ project.imageUrl +')' | safe: 'style'"></div>
@@ -16,5 +15,4 @@
       </nb-card-body>
       <nb-card-footer>{{project.tags | stringArray}}</nb-card-footer>
     </nb-card>
-  </ng-container>
 </div>
