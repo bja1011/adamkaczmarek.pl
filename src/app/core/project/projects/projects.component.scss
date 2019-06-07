@@ -1,0 +1,40 @@
+.projects-list {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+
+  .project {
+    max-width: calc(50% - 30px);
+    width: calc(50% - 30px);
+    min-width: 320px;
+    position: relative;
+
+    .project-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      left: 0;
+      top: 0;
+      transition: opacity 0.1s ease-out;
+    }
+
+    .project-description {
+      opacity: 0;
+      transition: opacity 0.1s ease-out;
+    }
+
+    &:hover {
+
+      .project-description {
+        opacity: 1;
+      }
+
+      .project-image {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+

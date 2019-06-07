@@ -1,4 +1,17 @@
-<button routerLink="/">HOME</button>
-<button routerLink="project/2">PROJECT</button>
-<button routerLink="about">ABOUT</button>
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <button nbButton ghost [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" routerLink="/">HOME</button>
+    <button nbButton ghost routerLinkActive="active-link" routerLink="projects">PROJECT</button>
+    <button nbButton ghost routerLinkActive="active-link" routerLink="about">ABOUT</button>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

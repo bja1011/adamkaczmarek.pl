@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-card-body *ngIf="tags">
+    <nb-checkbox *ngFor="let tag of tags" status="primary" (change)="onTagChange($event, tag)">{{tag}}</nb-checkbox>
+  </nb-card-body>
+</nb-card>
+
+<div class="projects-list">
+  <ng-container *ngFor="let project of processedProjects">
+    <nb-card class="project" size="small">
+      <nb-card-header>{{project.name}}</nb-card-header>
+      <nb-card-body>
+        <div class="project-image" [style.background-image]="'url('+ project.imageUrl +')' | safe: 'style'"></div>
+        <div class="project-description">
+          {{project.description}}
+        </div>
+      </nb-card-body>
+      <nb-card-footer>{{project.tags | stringArray}}</nb-card-footer>
+    </nb-card>
+  </ng-container>
+</div>

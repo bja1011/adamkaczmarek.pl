@@ -3,15 +3,25 @@ import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project/project.component';
 import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectsService } from './services/projects.service';
+import { NbCardModule, NbCheckboxModule } from '@nebular/theme';
+import { SharedModule } from '../../shared/shared.module';
+import { ProjectsComponent } from './projects/projects.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
-  declarations: [ProjectComponent],
+  declarations: [ProjectComponent, ProjectsComponent],
   imports: [
     CommonModule,
     ProjectRoutingModule,
+    NbCardModule,
+    SharedModule,
+    NbCheckboxModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     ProjectsService,
-  ]
+  ],
 })
 export class ProjectModule { }

@@ -1,1 +1,19 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
+
+.appearance-ghost {
+  &.active-link {
+    color: #000 !important;
+    border: solid 3px #000  !important;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

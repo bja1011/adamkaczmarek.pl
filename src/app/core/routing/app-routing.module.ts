@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ABOUT_ROUTE, HOME_ROUTE, PROJECT_ROUTE } from './const';
+import { ABOUT_ROUTE, HOME_ROUTE, PROJECTS_ROUTE } from './const';
 import { HomeComponent } from '../home/home/home.component';
 
 const routes: Routes = [
@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: PROJECT_ROUTE,
+    path: PROJECTS_ROUTE,
     loadChildren: () => import('../project/project.module').then(module => module.ProjectModule)
   },
   {
