@@ -2,24 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
 import { Project } from '../models/project.model';
 import { take } from 'rxjs/operators';
-import { animate, style, transition, trigger } from '@angular/animations';
+import { projectAnimations } from './projects.animations';
 
 @Component({
   selector: 'app-project',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  animations: [
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: '0' }),
-        animate('.2s ease-out', style({ opacity: '1' })),
-      ]),
-      transition(':leave', [
-        style({ opacity: '1' }),
-        animate('.2s ease-out', style({ opacity: '0' })),
-      ]),
-    ]),
-  ],
+  animations: projectAnimations,
 })
 export class ProjectsComponent implements OnInit {
 
@@ -60,7 +49,7 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  trackProject(index, project: Project) {
+  trackProjectItem(index, project: Project) {
     return project.id;
   }
 }
