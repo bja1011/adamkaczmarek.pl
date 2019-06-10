@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Project, projectType } from '../models/project.model';
+import { Project } from '../models/project.model';
 import { Observable, of } from 'rxjs';
 import { MOCK_PROJECTS } from './projects.mock';
 

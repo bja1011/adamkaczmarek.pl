@@ -7,7 +7,7 @@ export const projectAnimations = [
       animate('.2s ease-out', style({opacity: '1'})),
     ]),
     transition(':leave', [
-      style({opacity: '1', position: 'absolute'}),
+      style({opacity: '1'}),
       animate('.2s ease-out', style({opacity: '0'})),
     ]),
   ]),

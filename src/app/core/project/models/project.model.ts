@@ -9,5 +9,6 @@ export interface Project {
 
 export enum projectType {
   commercial,
-  personal
+  personal,
+  playground
 }
