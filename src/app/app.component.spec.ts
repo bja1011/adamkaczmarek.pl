@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { NbButtonModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -10,6 +10,7 @@ describe('AppComponent', () => {
         NbThemeModule.forRoot({name: 'default'}),
         RouterTestingModule,
         NbLayoutModule,
+        NbButtonModule,
       ],
       declarations: [
         AppComponent
