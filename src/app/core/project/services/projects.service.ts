@@ -15,7 +15,7 @@ export class ProjectsService {
    * Return projects as observable;
    */
   getProjects(): Observable<Project[]> {
-    return of(MOCK_PROJECTS.concat(MOCK_PROJECTS.concat(MOCK_PROJECTS)));
+    return of(MOCK_PROJECTS);
   }
 
   /**
