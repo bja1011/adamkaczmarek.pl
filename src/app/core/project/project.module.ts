@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project/project.component';
 import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectsService } from './services/projects.service';
-import { NbCardModule, NbCheckboxModule, NbLayoutModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbCheckboxModule, NbIconModule, NbLayoutModule } from '@nebular/theme';
 import { SharedModule } from '../../shared/shared.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,9 +20,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     NbLayoutModule,
+    NbIconModule,
+    NbButtonModule,
   ],
   providers: [
     ProjectsService,
   ],
 })
-export class ProjectModule { }
+export class ProjectModule {
+}
