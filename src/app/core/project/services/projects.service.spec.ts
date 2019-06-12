@@ -20,6 +20,16 @@ describe('ProjectsService', () => {
     });
   });
 
+  describe('get project details', () => {
+    it('should return single project', () => {
+      const service: ProjectsService = TestBed.get(ProjectsService);
+      service.getProjectDetails(1).subscribe(project => {
+          expect(project).toEqual(jasmine.any(Object));
+        }
+      );
+    });
+  });
+
   describe('prepare tabs', () => {
     it('should return tags as array', () => {
       const service: ProjectsService = TestBed.get(ProjectsService);

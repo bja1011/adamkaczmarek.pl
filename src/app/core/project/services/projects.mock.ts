@@ -6,7 +6,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'San Tropico',
     type: projectType.commercial,
     description: 'Grywalizacja',
-    imageUrl: 'assets/images/farm.jpg',
+    images: ['assets/images/farm.jpg'],
     tags: [
       'Angular',
       'PhaserJS',
@@ -18,7 +18,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'San Colombo',
     type: projectType.commercial,
     description: 'Grywalizacja',
-    imageUrl: 'assets/images/sc.png',
+    images: ['assets/images/sc.png'],
     tags: [
       'React',
       'BabylonJS',
@@ -32,7 +32,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'Dungeons of Fud',
     type: projectType.personal,
     description: 'Dungeons of Fud',
-    imageUrl: 'assets/images/dof.png',
+    images: ['assets/images/dof.png'],
     tags: [
       'Angular',
       'PhaserJS',
@@ -45,7 +45,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'Lexus FeelIn',
     type: projectType.commercial,
     description: 'Lexus feel in',
-    imageUrl: 'assets/images/lfi.jpg',
+    images: ['assets/images/lfi.jpg'],
     tags: [
       'Angular',
       'Ionic',

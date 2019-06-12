@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-header>{{project.name}}</nb-card-header>
+  <nb-card-body>
+    <nb-layout>
+      <nb-layout-column>{{project.description}}</nb-layout-column>
+      <nb-layout-column>
+        <div class="gallery">
+          <img *ngFor="let image of project.images" [src]="image">
+        </div>
+      </nb-layout-column>
+    </nb-layout>
+  </nb-card-body>
+</nb-card>

@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { Project } from '../models/project.model';
 import { Observable, of } from 'rxjs';
 import { MOCK_PROJECTS } from './projects.mock';
+import { mergeMap, switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
+
+  private projects: Project[];
 
   constructor() {
   }
@@ -14,8 +17,20 @@ export class ProjectsService {
   /**
    * Return projects as observable;
    */
-  getProjects(): Observable<Project[]> {
-    return of(MOCK_PROJECTS);
+  getProjects(noCache?: boolean): Observable<Project[]> {
+    if (!this.projects || noCache) {
+      this.projects = MOCK_PROJECTS;
+    }
+    return of(this.projects);
+  }
+
+  getProjectDetails(projectId: number) {
+    return this.getProjects()
+      .pipe(
+        mergeMap(projects => {
+          return of(projects.find(project => project.id === projectId));
+        })
+      );
   }
 
   /**
