@@ -1,17 +1,35 @@
 <nb-card>
-  <nb-card-body *ngIf="tags">
-    <nb-checkbox *ngFor="let tag of tags" status="primary" (change)="onTagChange($event, tag)">{{tag}}</nb-checkbox>
+  <nb-card-body>
+    Type:
+    <br>
+
+    <nb-checkbox status="primary" (change)="onTypeChange($event, types.commercial)">Commercial</nb-checkbox>
+    <nb-checkbox status="primary" (change)="onTypeChange($event, types.personal)">Personal</nb-checkbox>
+
+    <nb-accordion *ngIf="tags">
+      <nb-accordion-item>
+        <nb-accordion-item-header>Tags</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-checkbox
+            *ngFor="let tag of tags" status="primary"
+            (change)="onTagChange($event, tag)"
+          >
+            {{tag}}
+          </nb-checkbox>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
   </nb-card-body>
 </nb-card>
 
 <div class="projects-list">
-  <nb-card [routerLink]="''+project.id" class="project" size="small"
-           *ngFor="let project of processedProjects; trackBy: trackProjectItem" @fadeIn>
+  <nb-card [routerLink]="project.id+'-'+project.name" class="project" size="small"
+           *ngFor="let project of filteredProjects; trackBy: trackProjectItem" @fadeIn>
     <nb-card-header>{{project.name}}</nb-card-header>
     <nb-card-body>
       <div class="project-image" [style.background-image]="'url('+ project.images[0] +')' | safe: 'style'"></div>
       <div class="project-description">
-        {{project.description}}
+        {{project.shortDescription}}
       </div>
     </nb-card-body>
     <nb-card-footer>{{project.tags | stringArray}}</nb-card-footer>

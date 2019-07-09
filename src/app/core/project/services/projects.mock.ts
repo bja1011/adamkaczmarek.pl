@@ -3,10 +3,10 @@ import { Project, projectType } from '../models/project.model';
 export const MOCK_PROJECTS: Project[] = [
   {
     id: 1,
-    name: 'Sanville - Gamification platform v1',
+    name: 'Gamification platform v4',
     type: projectType.commercial,
-    description: `Story line: a building-management game where players are striving to obtain a 100% BIO certificate
-     for the products manufactured on the farm`,
+    shortDescription: 'A gamification platform with computer game to support the achievement of business goals.',
+    description: ``,
     techDescription: `Built with Angular v2 and PhaserJS`,
     images: ['assets/images/farm.jpg'],
     tags: [
@@ -20,6 +20,7 @@ export const MOCK_PROJECTS: Project[] = [
     name: 'San Colombo',
     type: projectType.commercial,
     description: 'Grywalizacja',
+    shortDescription: '',
     techDescription: ``,
     images: ['assets/images/sc.png'],
     tags: [
@@ -34,6 +35,7 @@ export const MOCK_PROJECTS: Project[] = [
     id: 3,
     name: 'Dungeons of Fud',
     type: projectType.personal,
+    shortDescription: '',
     description: 'Dungeons of Fud',
     techDescription: ``,
     images: ['assets/images/dof.png'],
@@ -48,6 +50,7 @@ export const MOCK_PROJECTS: Project[] = [
     id: 4,
     name: 'Lexus FeelIn',
     type: projectType.commercial,
+    shortDescription: '',
     description: 'Lexus feel in',
     techDescription: ``,
     images: ['assets/images/lfi.jpg'],

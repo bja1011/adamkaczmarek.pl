@@ -4,6 +4,7 @@ export interface Project {
   type: projectType;
   images?: string[];
   description?: string;
+  shortDescription: string;
   techDescription: string;
   tags?: string[];
 }

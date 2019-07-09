@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../services/projects.service';
-import { Project } from '../models/project.model';
+import { Project, projectType } from '../models/project.model';
 import { take } from 'rxjs/operators';
 import { projectAnimations } from './projects.animations';
 
@@ -13,9 +13,11 @@ import { projectAnimations } from './projects.animations';
 export class ProjectsComponent implements OnInit {
 
   projects: Project[];
-  processedProjects: Project[];
+  filteredProjects: Project[];
   tags: string[];
   selectedTags: string[] = [];
+  selectedTypes: projectType[] = [];
+  types = projectType;
 
   constructor(private projectsService: ProjectsService,
   ) {
@@ -25,7 +27,7 @@ export class ProjectsComponent implements OnInit {
       )
       .subscribe(projects => {
         this.projects = projects;
-        this.processedProjects = projects;
+        this.filteredProjects = projects;
         this.tags = projectsService.prepareTags(projects);
       });
   }
@@ -42,14 +44,32 @@ export class ProjectsComponent implements OnInit {
     } else {
       this.selectedTags = this.selectedTags.filter(tag => tag !== tagName);
     }
-    if (this.selectedTags.length === 0) {
-      this.processedProjects = this.projects;
-    } else {
-      this.processedProjects = this.projects.filter(project => project.tags.find(tag => this.selectedTags.includes(tag)));
-    }
+    this.filterProjects();
   }
 
   trackProjectItem(index, project: Project) {
     return project.id;
+  }
+
+  onTypeChange($event: Event, selectedType: projectType) {
+    const selectedAlready = this.selectedTypes.includes(selectedType);
+    if (($event.target as HTMLInputElement).checked) {
+      if (!selectedAlready) {
+        this.selectedTypes.push(selectedType);
+      }
+    } else {
+      this.selectedTypes = this.selectedTypes.filter(type => type !== selectedType);
+    }
+    this.filterProjects();
+  }
+
+  filterProjects() {
+    this.filteredProjects = this.selectedTypes.length > 0
+      ? this.projects.filter(project => this.selectedTypes.includes(project.type))
+      : this.projects;
+
+    this.filteredProjects = this.selectedTags.length > 0
+      ? this.filteredProjects.filter(project => project.tags.find(tag => this.selectedTags.includes(tag)))
+      : this.filteredProjects;
   }
 }
