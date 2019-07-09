@@ -14,7 +14,7 @@
   <nb-card-body>
     <nb-layout>
       <nb-layout-column>
-        <p>{{project.description}}</p>
+        <p [innerHTML]="project.description"></p>
         <p>{{project.techDescription}}</p>
       </nb-layout-column>
       <nb-layout-column>
