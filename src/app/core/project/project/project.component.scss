@@ -1,9 +1,22 @@
-.gallery {
-  img {
-    width: 100%;
+.project-details {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .project-description {
+    flex: 5;
+    min-width: 300px;
+  }
+
+  .project-media {
+    flex: 3;
+    min-width: 300px;
+
+    img {
+      width: 100%;
+    }
   }
 }
-
 
 .back-button {
   margin-right: 20px;

@@ -1,18 +1,18 @@
 <nb-layout>
-
   <nb-layout-header fixed>
-    <button nbButton ghost [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" routerLink="/">HOME</button>
+    <button nbButton ghost [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link" routerLink="/">
+      ABOUT
+    </button>
     <button nbButton ghost routerLinkActive="active-link" routerLink="projects">PROJECTS</button>
-    <button nbButton ghost routerLinkActive="active-link" routerLink="playground">PLAYGROUND</button>
-    <button nbButton ghost routerLinkActive="active-link" routerLink="about">ABOUT</button>
+    <!--<button nbButton ghost routerLinkActive="active-link" routerLink="playground">PLAYGROUND</button>-->
+    <!--<button nbButton ghost routerLinkActive="active-link" routerLink="about">ABOUT</button>-->
   </nb-layout-header>
 
   <nb-layout-column>
     <router-outlet></router-outlet>
   </nb-layout-column>
 
-  <nb-layout-footer fixed>
-    <!-- Insert footer here -->
-  </nb-layout-footer>
-
+  <!--<nb-layout-footer fixed>-->
+    <!--&lt;!&ndash; Insert footer here &ndash;&gt;-->
+  <!--</nb-layout-footer>-->
 </nb-layout>

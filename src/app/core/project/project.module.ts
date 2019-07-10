@@ -7,7 +7,7 @@ import { NbAccordionModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbIc
 import { SharedModule } from '../../shared/shared.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [ProjectComponent, ProjectsComponent],
@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbIconModule,
     NbButtonModule,
     NbAccordionModule,
+    LightboxModule,
   ],
   providers: [
     ProjectsService,

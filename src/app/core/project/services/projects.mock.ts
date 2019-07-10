@@ -3,7 +3,7 @@ import { Project, projectType } from '../models/project.model';
 export const MOCK_PROJECTS: Project[] = [
   {
     id: 1,
-    name: 'Gamification platform v4',
+    name: 'Gamification platform (v2)',
     type: projectType.commercial,
     shortDescription: 'A gamification platform with a computer game to support the achievement of business goals.',
     description:
@@ -15,13 +15,21 @@ export const MOCK_PROJECTS: Project[] = [
       A motivational strategy constructed in such a way contributes to an increase between 10% and 20% in the sales, 
       promotes regular monitoring of business reports and supports long-term commitment of the users of a gamification platform. <br>
       See more at <a href="https://oskarwegner.pl/en/index.html#strategy" target="_blank">Oskar Wegner</a> website.
-`,
-    techDescription: `Built with Angular v2 and PhaserJS`,
+      `,
+    techDescription: `
+        Platform needed to be available from browser and distributed as native mobile applications on AppStore and Google Play. <br>
+        Because of complexity of the UI views and elements, after research, I decided to use Angular as state manager, UI layer and build system. 
+        The game module was built with PhaserJS game engine. <br>
+        First version of the platform was using AngularJS. Second version was completly rewitten in Angular 2 (starting from RC4) and is constantly 
+        updating to newest version (currently v7). <br>
+        The benefits of using Angular as state manager and UI layer and splitting it into multiple separate modules allows non-game-developers to develop business features.  
+    `,
     images: ['assets/images/farm.jpg'],
     tags: [
       'Angular',
       'PhaserJS',
-      'Websocket'
+      'Websocket',
+      'NgRx'
     ]
   },
   {
@@ -44,13 +52,13 @@ export const MOCK_PROJECTS: Project[] = [
     id: 3,
     name: 'Dungeons of Fud',
     type: projectType.personal,
-    shortDescription: '',
+    shortDescription: 'Browser game ',
     description: 'Dungeons of Fud',
-    techDescription: ``,
+    techDescription: `Built with Angular 6 and Phaser3`,
     images: ['assets/images/dof.png'],
     tags: [
       'Angular',
-      'PhaserJS',
+      'Phaser3',
       'REST',
       'GameDev',
     ]

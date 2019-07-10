@@ -12,16 +12,16 @@
     {{project.name}}
   </nb-card-header>
   <nb-card-body>
-    <nb-layout>
-      <nb-layout-column>
+    <div class="project-details">
+      <div class="project-description">
+        <small>Description</small>
         <p [innerHTML]="project.description"></p>
-        <p>{{project.techDescription}}</p>
-      </nb-layout-column>
-      <nb-layout-column>
-        <div class="gallery">
-          <img *ngFor="let image of project.images" [src]="image">
-        </div>
-      </nb-layout-column>
-    </nb-layout>
+        <small>Tech description</small>
+        <p [innerHTML]="project.techDescription"></p>
+      </div>
+      <div class="project-media">
+        <img *ngFor="let image of project.images; let index=index" (click)="show(index)" [src]="image">
+      </div>
+    </div>
   </nb-card-body>
 </nb-card>
