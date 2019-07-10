@@ -17,14 +17,23 @@ export const MOCK_PROJECTS: Project[] = [
       See more at <a href="https://oskarwegner.pl/en/index.html#strategy" target="_blank">Oskar Wegner</a> website.
       `,
     techDescription: `
-        Platform needed to be available from browser and distributed as native mobile applications on AppStore and Google Play. <br>
-        Because of complexity of the UI views and elements, after research, I decided to use Angular as state manager, UI layer and build system. 
+        Platform needed to be available from browser and also distributed as native mobile applications on AppStore and Google Play. <br>
+        Because of complexity of the UI views and elements, after research, I decided to use Angular as state manager, UI layer and build system (from CLI). 
         The game module was built with PhaserJS game engine. <br>
         First version of the platform was using AngularJS. Second version was completly rewitten in Angular 2 (starting from RC4) and is constantly 
-        updating to newest version (currently v7). <br>
-        The benefits of using Angular as state manager and UI layer and splitting it into multiple separate modules allows non-game-developers to develop business features.  
+        updating to the newest version (currently v7). <br><br>
+        Using Angular as state manager, UI layer and splitting code into multiple, separate modules allows non-game-developers to develop and maintain business features without touching game code. 
+        <br> 
+        With NgRx store implementation it was even possible to switch between game engines (PhaserCE, Phaser3 or BabylonJS) without changing app state structure or other features code.   
+        <br>
     `,
-    images: ['assets/images/farm.jpg'],
+    images: [
+      'assets/images/sc1.jpg',
+      'assets/images/farm.jpg',
+      'assets/images/rt.jpg',
+      'assets/images/st1.jpg',
+      'assets/images/st2.jpg',
+    ],
     tags: [
       'Angular',
       'PhaserJS',
@@ -39,7 +48,7 @@ export const MOCK_PROJECTS: Project[] = [
     description: 'Grywalizacja',
     shortDescription: '',
     techDescription: ``,
-    images: ['assets/images/sc.png'],
+    images: ['assets/images/sc1.jpg'],
     tags: [
       'React',
       'BabylonJS',
@@ -55,7 +64,7 @@ export const MOCK_PROJECTS: Project[] = [
     shortDescription: 'Browser game ',
     description: 'Dungeons of Fud',
     techDescription: `Built with Angular 6 and Phaser3`,
-    images: ['assets/images/dof.png'],
+    images: ['assets/images/dof.jpg'],
     tags: [
       'Angular',
       'Phaser3',

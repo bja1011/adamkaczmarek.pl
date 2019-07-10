@@ -27,7 +27,7 @@
            *ngFor="let project of filteredProjects; trackBy: trackProjectItem" @fadeIn>
     <nb-card-header>{{project.name}}</nb-card-header>
     <nb-card-body>
-      <div class="project-image" [style.background-image]="'url('+ project.images[0] +')' | safe: 'style'"></div>
+      <div class="project-image" [style.background-image]="'url('+ (project.images[0] | imageThumb) +')' | safe: 'style'"></div>
       <div class="project-description">
         {{project.shortDescription}}
       </div>
