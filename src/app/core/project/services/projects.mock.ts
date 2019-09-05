@@ -42,6 +42,22 @@ export const MOCK_PROJECTS: Project[] = [
     ]
   },
   {
+    id: 4,
+    name: 'Lexus FeelIn',
+    type: projectType.commercial,
+    shortDescription: 'Hybrid mobile app for Lexus Poland',
+    description: `Application built for Lexus Poland it's a combination of Life-style app with news from Lexus world, current offer
+    and a utility application where users, after adding their cars to app, can book a service directly from application`,
+    techDescription: `Application built with Ionic framework and cordova`,
+    images: ['assets/images/lfi.jpg'],
+    tags: [
+      'Angular',
+      'Ionic',
+      'REST',
+      'Hybrid'
+    ]
+  },
+  {
     id: 2,
     name: 'San Colombo',
     type: projectType.commercial,
@@ -70,21 +86,6 @@ export const MOCK_PROJECTS: Project[] = [
       'Phaser3',
       'REST',
       'GameDev',
-    ]
-  },
-  {
-    id: 4,
-    name: 'Lexus FeelIn',
-    type: projectType.commercial,
-    shortDescription: '',
-    description: 'Lexus feel in',
-    techDescription: ``,
-    images: ['assets/images/lfi.jpg'],
-    tags: [
-      'Angular',
-      'Ionic',
-      'REST',
-      'Hybrid'
     ]
   }
 ];
